@@ -69,6 +69,7 @@
         </div>
         
     </div>
+    <div class="fb-facepile" data-href="https://www.facebook.com/FacebookDevelopers" data-max-rows="1" data-colorscheme="light" data-size="medium" data-show-count="true"></div>
     <div class="footer">
         <h4>製作單位</h4>
             國立虎尾科技大學 資訊工程系 行動應用與軟體工程  潘泓銘
@@ -300,15 +301,14 @@
         });
     });
     </script>
-    
-    <div class="fb-like-box" data-href="http://40025146.github.io/FlatCube/" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+    <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=703565972999632";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
+    }(document, 'script', 'facebook-jssdk'));</script>
+        
 </body>
 </html>
