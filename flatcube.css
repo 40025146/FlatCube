@@ -29,17 +29,13 @@
             height: 150px;
             margin-top:25px;
             position:absolute;
+            border-color: #FFEB73;
+            opacity:0;
            
         }
         .selectCard:hover{
             border-color:red;
-            display:inline;
-            margin-left: 10px;
-            border-style: solid;
-            width: 160px;
-            height: 150px;
-            margin-top:25px;
-            position:absolute;
+            opacity:1;
         }
         
         .cue{
