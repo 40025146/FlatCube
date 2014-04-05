@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,8 +87,8 @@
     var coverFlag=0,coverTemp;
     var x=0;
     var record=new Array();
-    $(".selectCard").css("display","none");
-    $("#SelectCard"+user).css("display","inline").css("border-color","red");
+    //$(".selectCard").css("display","none");
+    //$("#SelectCard"+user).css("display","inline").css("border-color","red");
     $("#card"+7).text("*");
     $("#card"+8).text("*");
     
@@ -102,7 +103,6 @@
     timer.pause();
     
     $("#start").click(function(){
-        
         setStart();
         /*
         $("#card"+1).text("1");
@@ -131,8 +131,8 @@
         old=7;user=7;
         coverFlag=0;coverTemp;
         x=0;
-        $(".selectCard").css("display","none");
-        $("#SelectCard"+user).css("display","inline").css("border-color","red");
+        //$(".selectCard").css("display","none");
+        //$("#SelectCard"+user).css("display","inline").css("border-color","red");
         $("#card"+7).css("background-image", "");
         $("#card"+8).css("background-image", "");
         $("#card"+7).text("*");
@@ -167,9 +167,9 @@
                     coverFlag=1;
                     coverTemp=old;
                 }
-                $("#SelectCard"+user).css("display","none").css("border-color","none");
+                //$("#SelectCard"+user).css("display","none").css("border-color","none");
                 user--;
-                $("#SelectCard"+user).css("display","inline").css("border-color","red");
+                //$("#SelectCard"+user).css("display","inline").css("border-color","red");
                 if(coverFlag==1){
                     //$("#SelectCard"+old).css("display","inline").css("border-color","blue");
                     coverFlag=0;
@@ -183,9 +183,9 @@
                     coverFlag=1;
                     coverTemp=old;
                 }
-                $("#SelectCard"+user).css("display","none").css("border-color","none");
+                //$("#SelectCard"+user).css("display","none").css("border-color","none");
                 user++;
-                $("#SelectCard"+user).css("display","inline").css("border-color","red");
+                //$("#SelectCard"+user).css("display","inline").css("border-color","red");
                 if(coverFlag==1){
                     //$("#SelectCard"+old).css("display","inline").css("border-color","blue");
                     coverFlag=0;
@@ -195,6 +195,38 @@
         }
         var temp;
         if(event.keyCode==32){
+            changeCard();
+        }
+    });
+    $("#SelectCard1").click(function(){
+        user=1;
+        changeCard();
+    });
+    $("#SelectCard2").click(function(){
+        user=2;
+        changeCard();
+    });
+    $("#SelectCard3").click(function(){
+        user=3;
+        changeCard();
+    });
+    $("#SelectCard4").click(function(){
+        user=4;
+        changeCard();
+    });
+    $("#SelectCard5").click(function(){
+        user=5;
+        changeCard();
+    });
+    $("#SelectCard6").click(function(){
+        user=6;
+        changeCard();
+    });
+    $("#SelectCard7").click(function(){
+        user=7;
+        changeCard();
+    });
+    function changeCard(){
             if(user+1!=old&&user-1!=old){
                 record[x++]=old;
                 temp=$("#card"+user).text();
@@ -207,21 +239,20 @@
                 temp=$("#card"+(user+1)).text();
                 $("#card"+(user+1)).text($("#card"+(old+1)).text());
                 $("#card"+(old+1)).text(temp);
-                $("#SelectCard"+old).css("display","none").css("border-color","none");
+                //$("#SelectCard"+old).css("display","none").css("border-color","none");
                 temp=$("#card"+(user+1)).css('background-image');
                 $("#card"+(user+1)).css("background-image",$("#card"+(old+1)).css('background-image') );
                 $("#card"+(old+1)).css("background-image",temp);
 
                 old=user;
-                $("#SelectCard"+user).css("display","inline").css("border-color","blue");
+                //$("#SelectCard"+user).css("display","inline").css("border-color","blue");
                 $("#cue").text("交換！！");
 
                 Check();
             }else{
                 $("#cue").text("不能這樣移動喔！！");
             }
-        }
-    });
+    }
     function Check(){
         if($("#card1").text()=="*"){
             CheckCard2();
